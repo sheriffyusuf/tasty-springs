@@ -37,8 +37,10 @@ export default function Contact() {
     return <>
         <Flex direction="column" align="center" mt={14} marginBottom="50px">
             <Heading fontWeight="100" letterSpacing="3px" as="h1" >Contact Us</Heading>
-            <Text mt={5}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio!</Text>
-            <Box my="50px" textAlign="left" width={{ base: "250px", md: "450px" }}>
+            <Box maxWidth={{ base: "300px", md: "600px" }} textAlign="center">
+                <Text mt={5}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, distinctio!</Text>
+            </Box>
+            <Box my="50px" textAlign="left" width={{ base: "350px", md: "450px" }}>
                 <form onSubmit={submit}>
                     <FormControl>
                         <FormLabel>Name</FormLabel>

@@ -7,14 +7,16 @@ export default function Gallery() {
 
     return <>
         <Flex direction="column" align="center" mt={14} marginBottom="130px">
-            <Heading fontWeight="100" letterSpacing="3px" as="h1" >Our Gallery</Heading>
-            <Text mt={5}>Here we have our gallery of delicious pastries for you to choose from.</Text>
+            <Heading fontWeight="100" letterSpacing="3px" fontSize="2.5rem" as="h1" >Our Gallery</Heading>
+            <Box maxWidth={{ base: "300px", md: "600px" }} textAlign="center">
+                <Text mt={5}>Here we have our gallery of delicious pastries for you to choose from.</Text>
+            </Box>
             <SimpleGrid columns={{ base: 1, md: 4 }} spacing={6} mt="80px">
                 {
                     itemsUrls.map((url) => (<VStack spacing={5} p={5} mt={2} borderColor="#630165" borderWidth="3px" borderStyle="double">
                         <Image src={url} boxSize="180px" />
                         <Box>
-                            <Button color="#630165" rounded="0" borderColor="#630165" variant="outline" _hover={{ bg: "#630165", color: "white" }} fontSize="sm">
+                            <Button color="#630165" _focus={{ boxShadow: "0 0 0 0.2rem rgba(99,1,101,.5)" }} rounded="0" borderColor="#630165" variant="outline" _hover={{ bg: "#630165", color: "white" }} fontSize="sm">
                                 Get it now
            </Button>
                         </Box>

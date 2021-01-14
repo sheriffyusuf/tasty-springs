@@ -1,6 +1,6 @@
-import { Flex, Heading, HStack, Image, Link } from "@chakra-ui/react";
+import { Box, Collapse, Flex, Heading, HStack, Image, Link, VStack } from "@chakra-ui/react";
 import React from "react";
-//import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link as L } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
@@ -10,7 +10,7 @@ const MenuItems = (props) => {
     const { children, isLast, to = "/", scroll, isHashLink = 'false', ...rest } = props
     return (
         <Heading
-            fontSize="2xl"
+            fontSize="1.4em"
             fontWeight="400"
             letterSpacing="3px"
             {...rest}
@@ -41,8 +41,26 @@ const Header = () => {
 
         </Flex> */}
 
-        <Flex as="nav" bg="#ee2e81" w="100%" color="white" py={4} align="center" justify="center">
-            <HStack spacing={16}>
+        <Flex as="nav" bg="#ee2e81" w="100%" color="white" py={{ base: 4, md: 6 }} align="center" justify="center">
+            <Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
+                <Box display="flex" justifyContent="center">
+                    {show ? <AiOutlineClose size="30px" /> : <AiOutlineMenu size="30px" />}
+                </Box>
+                <Collapse in={show} animateOpacity mt={4}>
+                    <Box mt="5">
+                        <VStack spacing={5}>
+                            <MenuItems to="/">Home</MenuItems>
+                            <MenuItems smooth to="/#about" scroll={el => scrollWidthOffset(el)} isHashLink>About</MenuItems>
+                            <MenuItems to="/gallery">Gallery</MenuItems>
+                            <MenuItems to="/contact">Contact</MenuItems>
+                            <MenuItems to="/messages">Messages</MenuItems>
+                        </VStack>
+                    </Box>
+
+                </Collapse>
+            </Box>
+
+            <HStack display={{ base: "none", md: "flex" }} spacing={16}>
                 <MenuItems to="/">Home</MenuItems>
                 <MenuItems smooth to="/#about" scroll={el => scrollWidthOffset(el)} isHashLink>About</MenuItems>
                 <MenuItems to="/gallery">Gallery</MenuItems>
