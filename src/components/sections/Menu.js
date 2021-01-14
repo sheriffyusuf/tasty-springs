@@ -41,20 +41,5 @@ export default function Menu() {
                 </TabPanel>
             </TabPanels>
         </Tabs>
-        {/* <CustomTabs /> */}
-        {/* <Tabs colorScheme="green">
-            <TabList>
-                <Tab>Tab 1</Tab>
-                <Tab>Tab 2</Tab>
-            </TabList>
-            <TabPanels>
-                <TabPanel>
-                    <p>one!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>two!</p>
-                </TabPanel>
-            </TabPanels>
-        </Tabs> */}
     </Box>
 };

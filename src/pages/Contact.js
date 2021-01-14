@@ -20,15 +20,12 @@ export default function Contact() {
 
     const submit = event => {
         event.preventDefault();
-        // alert(`Hello ${nameProps.value}`)
         addMessage({
             name: nameProps.value,
             email: emailProps.value,
             phone: phoneProps.value,
             message: messageProps.value
         });
-        //onNewColor(titleProps.value, colorProps.value);
-
         resetName();
         resetEmail();
         resetPhone();

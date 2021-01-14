@@ -10,6 +10,9 @@ const useMessageState = (initialValue) => {
         addMessage: (message) => {
             setMessages([...messages, message]);
         },
+        addAllMessages: (messages) => {
+            setMessages(messages);
+        }
         // deleteTodo: (todoIndex) => {
         //     const newTodos = message.filter((_, index) => index !== todoIndex);
 
